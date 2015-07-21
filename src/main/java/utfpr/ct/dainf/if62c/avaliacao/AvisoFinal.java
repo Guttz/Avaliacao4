@@ -11,4 +11,17 @@ public class AvisoFinal extends Aviso {
         super(compromisso);
     }
     
+    @Override
+    public void run() {
+        
+        System.out.println(compromisso.getDescricao() + " começa agora.");
+        
+        for(Aviso avisoAtual: compromisso.getAvisos()){
+            if(avisoAtual == null)
+                continue;
+            
+            avisoAtual.cancel();
+        }
+    }
+    
 }
